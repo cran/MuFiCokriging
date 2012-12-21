@@ -219,42 +219,6 @@ Loic Le Gratiet, Universite Paris VII Denis-Diderot - CEA, DAM, DIF
 		resCV.cok.all <- CrossValidationMuFicokmAll(mymodel,indice)
 #--- Multi-fidelity cokriging summary
 		sum <- summary(mymodel)
-#-------------------------------------------------------------------
-#- 1 Dimensional test with 3 levels of response
-#-------------------------------------------------------------------
-#--- test functions
-	myfunc1 <- function(x){sin(2*pi*x)*0.2*(x+2)^2+cos(4*pi*x)^2}
-	myfunc2 <- function(x){(2*x+x)*myfunc1(x)+x}
-	myfunc3 <- function(x){(x+0.5*x)*myfunc2(x)+x+x}
-#--- Data
-	#-- Nested Experimental Design sets
-		nD1 <- 100
-		D1 <- matrix(1:nD1)
-		nD2 <- 50		
-		nD3 <- 20
-		NestDesign <- NestedDesign(D1, nlevel=3 , n = c(nD2,nD3))
-	#-- Observations
-		z1 <- myfunc1(NestDesign$PX)
-		z2 <- myfunc2(ExtractNestDesign(NestDesign,2))
-		z3 <- myfunc3(ExtractNestDesign(NestDesign,3))
-#--- Multi-fidelity cokriging model creation
-		mymodel <- MuFicokm(
-			formula = list(~1+X1,~1,~1), 
-			MuFidesign = NestDesign , 
-			response = list(z1,z2,z3), 
-			nlevel = 3,
-			formula.rho = list(~1+X1,~1+X1),
-			covtype = "matern5_2")
-#--- predictions
-		set.seed(1);newdata <- matrix(runif(100,0,1),ncol=1)
-		predictions <- predict(mymodel, newdata, "UK")
-		z.pred <- predictions$mean
-#--- Cross Validation
-		set.seed(2);indice <- sample(1:nD3)[1:10]
-		resCV.cok <- CrossValidationMuFicokm(mymodel,indice)
-		resCV.cok.all <- CrossValidationMuFicokmAll(mymodel,indice)
-#--- Multi-fidelity cokriging summary
-		sum <- summary(mymodel)
 
 #-------------------------------------------------------------------
 #- 1 Dimensional test with 2 levels of response

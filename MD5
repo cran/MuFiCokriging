@@ -1,4 +1,4 @@
-6db2fd75f745b8c509d8d0e18f45008a *DESCRIPTION
+710f2f6aaecaa50b4e742d933cc5890f *DESCRIPTION
 06bdd6fa5cc4b9c29da3dcd185e15b52 *NAMESPACE
 60c7b0615c057cfc81ca43d91919e79d *R/CrossValidationMuFicokm.R
 f20794988faf36ac0592f7593daeb538 *R/CrossValidationMuFicokmAll.R
@@ -14,7 +14,7 @@ aa5f7cdd694e8d9db48b477263421f9e *R/summary.MuFicokm.R
 bcc989f5f3ab88aa247accf0d34ba5fe *man/CrossValidationMuFicokmAll.Rd
 816f85def1a10f9437f8a383cd858df9 *man/ExtractNestDesign.Rd
 239b1e6431677f390114b8f92b961b76 *man/MuFiCokriging-package.Rd
-aaffecd859b5baf41ea596aacfcef1cf *man/MuFicokm.Rd
+e1b394f161b09f31ae5a73a834d22786 *man/MuFicokm.Rd
 750a31013b6345cecc82036da646402d *man/NestedDesign.Rd
 adefda1f5149b955fc08ba717d9fb911 *man/NestedDesignBuilding.Rd
 17e6b803bdd4d78acbe700e243fd13e0 *man/SubstDesign.Rd

@@ -244,7 +244,7 @@ Loic Le Gratiet, Universite Paris VII Denis-Diderot - CEA, DAM, DIF
 			response = list(z1,z2,z3), 
 			nlevel = 3,
 			formula.rho = list(~1+X1,~1+X1),
-			covtype = list("matern5_2"))
+			covtype = "matern5_2")
 #--- predictions
 		set.seed(1);newdata <- matrix(runif(100,0,1),ncol=1)
 		predictions <- predict(mymodel, newdata, "UK")

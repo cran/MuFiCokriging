@@ -1,0 +1,27 @@
+importFrom("stats", predict)
+
+## S4
+exportClasses(kmCok)
+## All methods, for own or "foreign" generics:
+exportMethods(predict)
+
+#exportPattern("^[[:alpha:]]+")
+
+export(
+	CrossValidationMuFicokmAll ,
+	CrossValidationMuFicokm ,
+	kmCok ,
+	MuFicokm ,
+	predict.MuFicokm ,
+	summary.MuFicokm ,
+	NestedDesign ,
+	NestedDesignBuild,
+	SubstDesign,
+	ExtractNestDesign 
+	)
+
+## S3
+export(MuFicokm)
+S3method(summary,"MuFicokm")
+S3method(predict,"MuFicokm")
+export(NestedDesign)
